@@ -58,9 +58,6 @@ terraform init
 ```
 terraform plan
 ```
-
-```
-```
 ## Apply Terraform Configuration
 ```
 ```
