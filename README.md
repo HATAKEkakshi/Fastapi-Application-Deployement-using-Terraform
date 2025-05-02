@@ -45,8 +45,11 @@ Make sure the following are installed and configured on your local machine:
 └── README.md                # Project 
 
 ## 1. Clone the Repository
+```
 git clone https://github.com/HATAKEkakshi/Fastapi-Application-Deployement-using-Terraform.git
 cd Fastapi-Application-Deployment-using-Terraform
+```
+
 ##  Initialize Terraform
 ```
 ```
@@ -60,6 +63,5 @@ terraform plan
 ```
 ## Apply Terraform Configuration
 ```
-```
 terraform apply
-
+```
