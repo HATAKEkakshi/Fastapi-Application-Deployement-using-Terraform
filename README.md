@@ -49,9 +49,9 @@ git clone https://github.com/HATAKEkakshi/Fastapi-Application-Deployement-using-
 cd Fastapi-Application-Deployment-using-Terraform
 ##  Initialize Terraform
 ```
+```
 cd Infra
 terraform init
-```
 ```
 
 ## Review Terraform Plan
