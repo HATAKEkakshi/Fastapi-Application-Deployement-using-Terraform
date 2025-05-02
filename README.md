@@ -46,12 +46,12 @@ Make sure the following are installed and configured on your local machine:
 
 ## 1. Clone the Repository
 ```
+```
 git clone https://github.com/HATAKEkakshi/Fastapi-Application-Deployement-using-Terraform.git
 cd Fastapi-Application-Deployment-using-Terraform
-```
 
-##  Initialize Terraform
 ```
+## Initialsing Terraform
 ```
 cd Infra
 terraform init
