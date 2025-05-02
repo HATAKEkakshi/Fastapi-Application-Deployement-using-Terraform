@@ -9,10 +9,10 @@ sudo apt install nginx -y
 echo "##########################################################################"
 # Cloning Deployment Repository
 git clone https://github.com/HATAKEkakshi/Fastapi-Application-Deployement-using-Terraform.git
-cd Fastapi-Application-Deployement-using-Terraform
+cd Fastapi-Application-Deployement-using-Terraform/Configuration
 #Copying Nginx Configuration File
 echo "###############Setting Up Configuration File for Nginx####################"
-sudo cp fastapi_nginx /etc/nginx/sites-available/fastapi_nginx
+sudo cp /root/Fastapi-Application-Deployement-using-Terraform/Configuration/fastapi_nginx /etc/nginx/sites-available/fastapi_nginx
 echo "##########################################################################"
 sudo systemctl restart nginx
 cd ..
@@ -28,8 +28,8 @@ echo "##########################################################################
 #Creating Systemd Service
 echo "########################Creating Systemd Service###########################"
 cd ..
-cd Fastapi-Application-Deployement-using-Terraform
-sudo cp fastapi.service /etc/systemd/system/fastapi.service
+cd Fastapi-Application-Deployement-using-Terraform/Configuration
+sudo cp /root/Fastapi-Application-Deployement-using-Terraform/Configuration/fastapi.service /etc/systemd/system/fastapi.service
 echo "##########################################################################"
 sudo systemctl start fastapi
 sudo systemctl enable fastapi
