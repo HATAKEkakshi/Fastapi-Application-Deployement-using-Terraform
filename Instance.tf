@@ -11,7 +11,7 @@ resource "aws_instance" "fastapi" {
   }
   provisioner "file" {
     source      = "web.sh"
-    destination = "/root/web.sh"
+    destination = "/tmp/web.sh"
   }
   connection {
     type        = "ssh"
@@ -21,8 +21,8 @@ resource "aws_instance" "fastapi" {
   }
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /root/web.sh",
-      "sudo /root/web.sh"
+      "chmod +x /tmp/web.sh",
+      "sudo /tmp/web.sh"
     ]
   }
   provisioner "local-exec" {
@@ -37,12 +37,18 @@ resource "aws_ec2_instance_state" "web_state" {
   instance_id = aws_instance.fastapi[count.index].id
   state       = "running"
 }
-resource "aws_eip" "elastic_ip" {
-  instance = aws_instance.fastapi[0].id
+resource "aws_eip" "fastapi_eip" {
+  count      = length(aws_instance.fastapi)
+  instance   = aws_instance.fastapi[count.index].id
+  depends_on = [aws_instance.fastapi]
 }
+
 output "Fastapi_public_ip" {
   value = aws_instance.fastapi.*.public_ip
 }
 output "fastapi_private_ip" {
   value = aws_instance.fastapi.*.private_ip
+}
+output "fastapi_elastic_ip" {
+  value = aws_eip.fastapi_eip[*].public_ip
 }
