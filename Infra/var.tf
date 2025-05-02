@@ -11,7 +11,7 @@ variable "zone" {
 variable "amiID" {
   type = map(any)
   default = {
-    "us-east-1" = "ami-084568db4383264d4"
+    "us-east-1" = "ami-07db26ec72b770f6e"
     "us-east-2" = "ami-058a8a5ab36292159"
   }
 }

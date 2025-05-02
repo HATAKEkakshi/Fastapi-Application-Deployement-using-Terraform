@@ -1,0 +1,12 @@
+[Unit]
+Description=Set Pyenv Local Version for CuraDocs_Servers
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/FastAPI-Practice
+ExecStart=/bin/bash -c 'export PYENV_ROOT="$HOME/.pyenv"; export PATH="$PYENV_ROOT/bin:$PATH"; eval "$(pyenv init --path)"; eval "$(pyenv init -)"; pyenv local pypy3.10-7.3.18'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
