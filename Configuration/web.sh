@@ -12,7 +12,7 @@ git clone https://github.com/HATAKEkakshi/Fastapi-Application-Deployement-using-
 cd Fastapi-Application-Deployement-using-Terraform/Configuration
 #Copying Nginx Configuration File
 echo "###############Setting Up Configuration File for Nginx####################"
-sudo cp /root/Fastapi-Application-Deployement-using-Terraform/Configuration/fastapi_nginx /etc/nginx/sites-available/fastapi_nginx
+sudo cp /root/Fastapi-Application-Deployement-using-Terraform/Configuration/fastapi_nginx /etc/nginx/sites-enabled/fastapi_nginx
 echo "##########################################################################"
 sudo systemctl restart nginx
 echo "####################Setting Up pyenv-local Service######################"
@@ -23,18 +23,17 @@ systemctl daemon-reload
 systemctl start pyenv-local.service
 systemctl enable pyenv-local.service
 echo "#####################################################################"
-cd ..
+cd /root/
 #Cloning Source Code
 git clone https://github.com/Madhur-Prakash/FastAPI-Practice.git
 cd FastAPI-Practice
 #Installing Dependencies
 echo "########################Installing Dependencies############################"
-pyenv local pypy3.10-7.3.18
-pip install -r requirements.txt
+systemctl restart pyenv-local
+/root/.pyenv/shims/python3.10 -m pip install -r requirements.txt
 echo "##########################################################################"
 #Creating Systemd Service
 echo "########################Creating Systemd Service###########################"
-cd ..
 cd /root/Fastapi-Application-Deployement-using-Terraform/Configuration
 sudo cp /root/Fastapi-Application-Deployement-using-Terraform/Configuration/fastapi.service /etc/systemd/system/fastapi.service
 echo "##########################################################################"
