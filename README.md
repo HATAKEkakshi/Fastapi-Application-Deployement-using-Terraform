@@ -113,15 +113,14 @@ Fastapi-Application-Deployement-using-Terraform/
 │   │   ├── redis-docker-services.service    # Systemd service for Redis
 │   │   └── redis-docker-cleanup.service     # Cleanup service
 │   ├── Infrastructure/
-│   │   └── fastapi/
-│   │       ├── instance.tf          # Redis EC2 configuration
-│   │       └── securitygroup.tf     # Redis security group
+│   │   └── fastapi # contains all the resource file like instance,keypair,securitygroup,provider,variables
+│   │       
 │   └── Installation/
 │       └── cache.sh                 # Redis installation script
 ├── Database_Server/                  # MongoDB deployment module
 │   ├── Configuration/
 │   │   └── mongod.conf             # MongoDB configuration
-│   └── Infrastructure/
+│   └── Infrastructure/ # contains all the resource file like instance,keypair,securitygroup,provider,variables
 │       ├── instance.tf             # MongoDB EC2 configuration
 │       ├── securitygroup.tf        # MongoDB security group
 │       ├── database.sh             # MongoDB installation script
@@ -132,7 +131,7 @@ Fastapi-Application-Deployement-using-Terraform/
 │   │   ├── fastapi.service         # FastAPI systemd service
 │   │   ├── pyenv-local.service     # Python environment service
 │   │   └── web.sh                  # FastAPI deployment script
-│   └── Infra/
+│   └── Infra/ # contains all the resource file like instance,keypair,securitygroup,provider
 │       ├── instance.tf             # FastAPI EC2 configuration
 │       ├── securitygroup.tf        # FastAPI security group
 │       └── fastapi-key.pem         # FastAPI SSH key
