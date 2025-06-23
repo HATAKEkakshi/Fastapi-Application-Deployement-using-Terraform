@@ -21,7 +21,7 @@ if [ "$choice" -eq 1 ]; then
     echo "Please ensure you have updated mongodb link with provided IPs in your application configuration."
 elif [ "$choice" -eq 2 ]; then
     echo "Deploying Redis..."
-    cd Cache_Server/Infrastructure
+    cd Cache_Server/Infrastructure/fastapi
     terraform init
     terraform validate
     terraform plan
@@ -55,7 +55,7 @@ elif [ "$choice" -eq 4 ]; then
         terraform destroy -auto-approve
         echo "MongoDB resources destroyed."
         echo "Destroying Redis resources..."
-        cd ../../Cache_Server/Infrastructure
+        cd ../../Cache_Server/Infrastructure/fastapi
         terraform destroy -auto-approve
         echo "Redis resources destroyed."
         echo "Destroying FastAPI application resources..."
