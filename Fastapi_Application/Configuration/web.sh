@@ -25,8 +25,8 @@ systemctl enable pyenv-local.service
 echo "#####################################################################"
 cd /root/
 #Cloning Source Code
-git clone https://github.com/Madhur-Prakash/FastAPI-Practice.git
-cd FastAPI-Practice
+git clone https://github.com/HATAKEkakshi/Todo.git
+cd Todo
 #Installing Dependencies
 echo "########################Installing Dependencies############################"
 systemctl restart pyenv-local

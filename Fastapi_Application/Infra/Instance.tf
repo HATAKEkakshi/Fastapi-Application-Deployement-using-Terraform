@@ -10,7 +10,7 @@ resource "aws_instance" "fastapi" {
     Project = "FastApi"
   }
   provisioner "file" {
-    source      = "/Users/hemantkumar/Developer/CuraDocs/Fastapi-Application-Deployement-using-Terraform/Configuration/web.sh"
+    source      = "/Users/hemantkumar/Developer/backend/Fastapi-Application-Deployement-using-Terraform/Fastapi_Application/Configuration/web.sh"
     destination = "/tmp/web.sh"
   }
   connection {

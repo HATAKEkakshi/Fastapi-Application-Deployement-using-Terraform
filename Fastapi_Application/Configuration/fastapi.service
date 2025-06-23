@@ -1,0 +1,12 @@
+[Unit]
+Description=FastAPI Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/Todo/
+ExecStart=/usr/bin/python3 -m uvicorn app:app --host 127.0.0.1 --port 8000 --reload
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
